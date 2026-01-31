@@ -1,0 +1,407 @@
+[
+  {
+    "name": "getBooleanProperty",
+    "description": "Gets the current value of a boolean type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to read."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to read.",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId"
+      ]
+    }
+  },
+  {
+    "name": "getFloatArrayProperty",
+    "description": "Gets the current value of a float array type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to read."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to read.",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId"
+      ]
+    }
+  },
+  {
+    "name": "getFloatProperty",
+    "description": "Gets the current value of a float type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to read."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to read.",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId"
+      ]
+    }
+  },
+  {
+    "name": "getIntArrayProperty",
+    "description": "Gets the current value of an integer array type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to read."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to read.",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId"
+      ]
+    }
+  },
+  {
+    "name": "getIntProperty",
+    "description": "Gets the current value of an integer type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to read."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to read.",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId"
+      ]
+    }
+  },
+  {
+    "name": "getLongArrayProperty",
+    "description": "Gets the current value of a long array type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to read."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to read.",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId"
+      ]
+    }
+  },
+  {
+    "name": "getLongProperty",
+    "description": "Gets the current value of a long type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to read."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to read.",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId"
+      ]
+    }
+  },
+  {
+    "name": "getStringProperty",
+    "description": "Gets the current value of a string type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to read."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to read.",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId"
+      ]
+    }
+  },
+  {
+    "name": "setBooleanProperty",
+    "description": "Sets the value for a boolean type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to modify."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to modify.",
+          "format": "int32"
+        },
+        "value": {
+          "type": "BOOLEAN",
+          "description": "The new boolean value to set."
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId",
+        "value"
+      ]
+    }
+  },
+  {
+    "name": "setFloatArrayProperty",
+    "description": "Sets the value for a float array type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to modify."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to modify.",
+          "format": "int32"
+        },
+        "value": {
+          "type": "ARRAY",
+          "description": "The new float array value to set.",
+          "items": {
+            "type": "NUMBER",
+            "format": "float"
+          }
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId",
+        "value"
+      ]
+    }
+  },
+  {
+    "name": "setFloatProperty",
+    "description": "Sets the value for a float type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to modify."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to modify.",
+          "format": "int32"
+        },
+        "value": {
+          "type": "NUMBER",
+          "description": "The new float value to set.",
+          "format": "float"
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId",
+        "value"
+      ]
+    }
+  },
+  {
+    "name": "setIntArrayProperty",
+    "description": "Sets the value for an integer array type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to modify."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to modify.",
+          "format": "int32"
+        },
+        "value": {
+          "type": "ARRAY",
+          "description": "The new integer array value to set.",
+          "items": {
+            "type": "INTEGER",
+            "format": "int32"
+          }
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId",
+        "value"
+      ]
+    }
+  },
+  {
+    "name": "setIntProperty",
+    "description": "Sets the value for an integer type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to modify."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to modify.",
+          "format": "int32"
+        },
+        "value": {
+          "type": "INTEGER",
+          "description": "The new integer value to set.",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId",
+        "value"
+      ]
+    }
+  },
+  {
+    "name": "setLongArrayProperty",
+    "description": "Sets the value for a long array type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to modify."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to modify.",
+          "format": "int32"
+        },
+        "value": {
+          "type": "ARRAY",
+          "description": "The new long array value to set.",
+          "items": {
+            "type": "INTEGER"
+          }
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId",
+        "value"
+      ]
+    }
+  },
+  {
+    "name": "setLongProperty",
+    "description": "Sets the value for a long type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to modify."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to modify.",
+          "format": "int32"
+        },
+        "value": {
+          "type": "INTEGER",
+          "description": "The new long value to set."
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId",
+        "value"
+      ]
+    }
+  },
+  {
+    "name": "setStringProperty",
+    "description": "Sets the value for a string type vehicle property.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "propertyName": {
+          "type": "STRING",
+          "description": "The unique name of the vehicle property to modify."
+        },
+        "areaId": {
+          "type": "INTEGER",
+          "description": "The specific area ID of the property to modify.",
+          "format": "int32"
+        },
+        "value": {
+          "type": "STRING",
+          "description": "The new string value to set."
+        }
+      },
+      "required": [
+        "propertyName",
+        "areaId",
+        "value"
+      ]
+    }
+  }
+]

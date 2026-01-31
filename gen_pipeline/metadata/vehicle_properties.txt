@@ -1,0 +1,1289 @@
+[
+  {
+    "propertyName": "CABIN_LIGHTS_SWITCH",
+    "propertyDescription": "Reports the current position of the physical switch that controls the cabin lights and can also be used to set the cabin light state.\nValues:\n- 0 (OFF): The light switch is in the \"Off\" position.\n- 1 (ON): The light switch is in the \"On\" position.\n- 256 (AUTOMATIC): The lights are in automatic mode.\n",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": [
+          0,
+          1,
+          2,
+          256
+        ]
+      }
+    ]
+  },
+  {
+    "propertyName": "DOOR_LOCK",
+    "propertyDescription": "Indicates door is locked or not",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left door.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right door.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left door.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right door.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "DOOR_POS",
+    "propertyDescription": "Door Position: Supports integers from a minimum (closed) to a maximum (fully open) value to represent intermediate positions",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left door.",
+        "minValue": "0",
+        "maxValue": "1",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right door.",
+        "minValue": "0",
+        "maxValue": "1",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left door.",
+        "minValue": "0",
+        "maxValue": "1",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right door.",
+        "minValue": "0",
+        "maxValue": "1",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 536870912,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for trunk lid.",
+        "minValue": "0",
+        "maxValue": "1",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "ENV_OUTSIDE_TEMPERATURE",
+    "propertyDescription": "Outside temperature in celsius",
+    "access": "ReadOnly",
+    "dataType": "Float",
+    "changeMode": "Continuous",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "EV_BATTERY_LEVEL",
+    "propertyDescription": "Reports the current battery level in watt-hour (Wh)",
+    "access": "ReadOnly",
+    "dataType": "Float",
+    "changeMode": "Continuous",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "EV_CHARGE_PERCENT_LIMIT",
+    "propertyDescription": "Indicates the maximum charge percent threshold set by the user",
+    "access": "ReadWrite",
+    "dataType": "Float",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "EV_CHARGE_PORT_OPEN",
+    "propertyDescription": "Indicates and controls the EV charge port on the vehicle is open or not",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "EV_CHARGE_TIME_REMAINING",
+    "propertyDescription": "Estimated charge time remaining in seconds, reports 0 if the vehicle is not charging",
+    "access": "ReadOnly",
+    "dataType": "Integer",
+    "changeMode": "Continuous",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "EV_CURRENT_BATTERY_CAPACITY",
+    "propertyDescription": "Reports the current usable battery capacity for EV or hybrid vehicle in watt-hour (Wh)",
+    "access": "ReadOnly",
+    "dataType": "Float",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "FRONT_FOG_LIGHTS_SWITCH",
+    "propertyDescription": "Gets or sets the operational state of the front fog lights.\nValues:\n- 0 (OFF): Manually off.\n- 1 (ON): Manually on.\n- 2 (DAYTIME_RUNNING): DRL mode is active, fog lights are off.\n- 256 (AUTOMATIC): Automatic sensor-based control.\n",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": [
+          0,
+          1,
+          2,
+          256
+        ]
+      }
+    ]
+  },
+  {
+    "propertyName": "FUEL_DOOR_OPEN",
+    "propertyDescription": "Indicates and controls the fuel door on the vehicle is open or not",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "FUEL_LEVEL",
+    "propertyDescription": "Reports the fuel level in milliliters",
+    "access": "ReadOnly",
+    "dataType": "Float",
+    "changeMode": "Continuous",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "FUEL_LEVEL_LOW",
+    "propertyDescription": "Indicates the low fuel warning, which turns on when the vehicle's energy (gas, battery, or both) is low",
+    "access": "ReadOnly",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "GLOVE_BOX_DOOR_POS",
+    "propertyDescription": "Glove box door position: 0=closed, max=fully open",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "0",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "GLOVE_BOX_LOCKED",
+    "propertyDescription": "Locks or unlocks the glove box",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HAZARD_LIGHTS_SWITCH",
+    "propertyDescription": "Gets or sets the state of the hazard lights.\nValues:\n- 0 (OFF): The hazard lights are inactive.\n- 1 (ON): The hazard lights are active (flashing).\n",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": [
+          0,
+          1,
+          2,
+          256
+        ]
+      }
+    ]
+  },
+  {
+    "propertyName": "HEADLIGHTS_SWITCH",
+    "propertyDescription": "Gets or sets the state of the headlights.\nValues:\n- 0 (OFF): The light switch is in the \"Off\" position.\n- 1 (ON): The light switch is in the \"On\" position.\n- 2 (DAYTIME_RUNNING): The light switch is set to Daytime Running Lights (DRL) mode.\n- 256 (AUTOMATIC): The lights are in automatic mode.\n",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": [
+          0,
+          1,
+          2,
+          256
+        ]
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_AC_ON",
+    "propertyDescription": "Turns the vehicle's air conditioning (AC) on or off",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_AUTO_ON",
+    "propertyDescription": "Enables or disables automatic climate control for the HVAC system",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_DEFROSTER",
+    "propertyDescription": "Enables or disables window defroster",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for front windshield.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 2,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for rear windshield.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_FAN_DIRECTION",
+    "propertyDescription": "Gets or sets the HVAC airflow mode.\nValues:\n- 1 (FACE): To dashboard vents.\n- 2 (FLOOR): To floor vents.\n- 3 (FACE_AND_FLOOR): To dashboard and floor vents.\n- 4 (DEFROST): To windshield vents.\n- 6 (DEFROST_AND_FLOOR): To windshield and floor vents.\n",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_FAN_SPEED",
+    "propertyDescription": "Gets or sets the HVAC fan speed",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "1",
+        "maxValue": "7",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "1",
+        "maxValue": "7",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "1",
+        "maxValue": "7",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "1",
+        "maxValue": "7",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "1",
+        "maxValue": "7",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_POWER_ON",
+    "propertyDescription": "Controls the main power for the entire HVAC system. When set to false, other related HVAC properties (e.g., fan speed, temperature) may become unavailable.\n",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_RECIRC_ON",
+    "propertyDescription": "Controls whether HVAC air is drawn from outside (false) or recirculated from inside the cabin (true)",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_SEAT_TEMPERATURE",
+    "propertyDescription": "Controls the seat's heating and cooling level, where a higher value corresponds to a higher temperature",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "-2",
+        "maxValue": "2",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "-2",
+        "maxValue": "2",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "-2",
+        "maxValue": "2",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "-2",
+        "maxValue": "2",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "-2",
+        "maxValue": "2",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_SEAT_VENTILATION",
+    "propertyDescription": "Gets or sets the seat's ventilation level",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "0",
+        "maxValue": "3",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "0",
+        "maxValue": "3",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "0",
+        "maxValue": "3",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "0",
+        "maxValue": "3",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "0",
+        "maxValue": "3",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_SIDE_MIRROR_HEAT",
+    "propertyDescription": "Gets or sets the side mirror heat level",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 3,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for left side mirror, right side mirror.",
+        "minValue": "0",
+        "maxValue": "2",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_STEERING_WHEEL_HEAT",
+    "propertyDescription": "Controls the steering wheel's heating and cooling level, where a higher value corresponds to a higher temperature",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "-2",
+        "maxValue": "2",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_TEMPERATURE_CURRENT",
+    "propertyDescription": "Reports the current HVAC temperature in celsius",
+    "access": "ReadOnly",
+    "dataType": "Float",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "HVAC_TEMPERATURE_SET",
+    "propertyDescription": "Sets the HVAC target temperature in celsius",
+    "access": "ReadWrite",
+    "dataType": "Float",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "17.5",
+        "maxValue": "32.5",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "17.5",
+        "maxValue": "32.5",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "17.5",
+        "maxValue": "32.5",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "17.5",
+        "maxValue": "32.5",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "17.5",
+        "maxValue": "32.5",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "INFO_EV_BATTERY_CAPACITY",
+    "propertyDescription": "Indicates the vehicle's total usable battery capacity in watt-hours (Wh) when new",
+    "access": "ReadOnly",
+    "dataType": "Float",
+    "changeMode": "Static",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "INFO_FUEL_CAPACITY",
+    "propertyDescription": "Indicates the fuel capacity of the vehicle in milliliters",
+    "access": "ReadOnly",
+    "dataType": "Float",
+    "changeMode": "Static",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "INFO_FUEL_TYPE",
+    "propertyDescription": "Indicates the list of fuels the vehicle may use.\nValues:\n- 1 (UNLEADED): Unleaded gasoline.\n- 2 (LEADED): Leaded gasoline.\n- 3 (DIESEL_1): Diesel #1.\n- 4 (DIESEL_2): Diesel #2.\n- 5 (BIODIESEL): Biodiesel.\n- 6 (E85): 85% ethanol/gasoline blend.\n- 7 (LPG): Liquified petroleum gas.\n- 8 (CNG): Compressed natural gas.\n- 9 (LNG): Liquified natural gas.\n- 10 (ELECTRIC): Electric.\n- 11 (HYDROGEN): Hydrogen fuel cell.\n- 12 (OTHER): Other fuel types not listed.\n",
+    "access": "ReadOnly",
+    "dataType": "IntArray",
+    "changeMode": "Static",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "INFO_MAKE",
+    "propertyDescription": "The manufacturer of vehicle (brand name)",
+    "access": "ReadOnly",
+    "dataType": "String",
+    "changeMode": "Static",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "INFO_MODEL",
+    "propertyDescription": "The vehicle's model name",
+    "access": "ReadOnly",
+    "dataType": "String",
+    "changeMode": "Static",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "INFO_MODEL_YEAR",
+    "propertyDescription": "Model year of the vehicle",
+    "access": "ReadOnly",
+    "dataType": "Integer",
+    "changeMode": "Static",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "MIRROR_AUTO_FOLD_ENABLED",
+    "propertyDescription": "Enables or disables automatic folding of the vehicle's side mirrors",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 3,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for left side mirror, right side mirror.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "MIRROR_FOLD",
+    "propertyDescription": "Indicates mirror is folded or not",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "PARKING_BRAKE_ON",
+    "propertyDescription": "Indicates the parking brake state",
+    "access": "ReadOnly",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "PERF_VEHICLE_SPEED",
+    "propertyDescription": "Speed of the vehicle in m/s",
+    "access": "ReadOnly",
+    "dataType": "Float",
+    "changeMode": "Continuous",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "RANGE_REMAINING",
+    "propertyDescription": "Range remaining in meters",
+    "access": "ReadWrite",
+    "dataType": "Float",
+    "changeMode": "Continuous",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "READING_LIGHTS_SWITCH",
+    "propertyDescription": "Gets or sets the current position of the switch that controls the reading lights.\nValues:\n- 0 (OFF): The light switch is in the \"Off\" position.\n- 1 (ON): The light switch is in the \"On\" position.\n- 256 (AUTOMATIC): The lights are in automatic mode.\n",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": [
+          0,
+          1,
+          2,
+          256
+        ]
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": [
+          0,
+          1,
+          2,
+          256
+        ]
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": [
+          0,
+          1,
+          2,
+          256
+        ]
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": [
+          0,
+          1,
+          2,
+          256
+        ]
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": [
+          0,
+          1,
+          2,
+          256
+        ]
+      }
+    ]
+  },
+  {
+    "propertyName": "REAR_FOG_LIGHTS_SWITCH",
+    "propertyDescription": "Gets or sets the operational state of the rear fog lights.\nValues:\n- 0 (OFF): Manually off.\n- 1 (ON): Manually on.\n- 2 (DAYTIME_RUNNING): DRL mode is active, fog lights are off.\n- 256 (AUTOMATIC): Automatic sensor-based control.\n",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 0,
+        "areaIdDescription": "Use this 'areaId' value to apply the property to the entire vehicle.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": [
+          0,
+          1,
+          2,
+          256
+        ]
+      }
+    ]
+  },
+  {
+    "propertyName": "SEAT_FORE_AFT_POS",
+    "propertyDescription": "Controls the fore/aft (forward/backward) position of the seat.\n- Minimum value: The seat is in its rearmost position.\n- Maximum value: The seat is in its foremost position.\n",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "-10",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "-10",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "-10",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "-10",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "-10",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "SEAT_HEIGHT_POS",
+    "propertyDescription": "Controls the the seat height.\n- Minimum value: The seat is in its lowest position.\n- Maximum value: The seat is in its highest position.\n",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left seat.",
+        "minValue": "-10",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right seat.",
+        "minValue": "-10",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left seat.",
+        "minValue": "-10",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right seat.",
+        "minValue": "-10",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 32,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row center seat.",
+        "minValue": "-10",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "TIRE_PRESSURE",
+    "propertyDescription": "Tire pressure in kilopascal",
+    "access": "ReadOnly",
+    "dataType": "Float",
+    "changeMode": "Continuous",
+    "areaIdProfiles": [
+      {
+        "areaId": 1,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for left front wheel.",
+        "minValue": "193.0",
+        "maxValue": "300.0",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 2,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for right front wheel.",
+        "minValue": "193.0",
+        "maxValue": "300.0",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 4,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for left rear wheel.",
+        "minValue": "193.0",
+        "maxValue": "300.0",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 8,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for right rear wheel.",
+        "minValue": "193.0",
+        "maxValue": "300.0",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "WINDOW_LOCK",
+    "propertyDescription": "Indicates window child lock is locked or not",
+    "access": "ReadWrite",
+    "dataType": "Boolean",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 1344,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right window, second row left window, second row right window.",
+        "minValue": "",
+        "maxValue": "",
+        "supportedEnumValues": []
+      }
+    ]
+  },
+  {
+    "propertyName": "WINDOW_POS",
+    "propertyDescription": "Controls the window position.\n- Minimum value: The window is fully closed.\n- Maximum value: The window is fully open.\n",
+    "access": "ReadWrite",
+    "dataType": "Integer",
+    "changeMode": "OnChange",
+    "areaIdProfiles": [
+      {
+        "areaId": 16,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row left window.",
+        "minValue": "0",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 64,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first row right window.",
+        "minValue": "0",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 256,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row left window.",
+        "minValue": "0",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 1024,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for second row right window.",
+        "minValue": "0",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      },
+      {
+        "areaId": 65536,
+        "areaIdDescription": "This 'areaId' value targets the vehicle property for first top roof window.",
+        "minValue": "-10",
+        "maxValue": "10",
+        "supportedEnumValues": []
+      }
+    ]
+  }
+]
