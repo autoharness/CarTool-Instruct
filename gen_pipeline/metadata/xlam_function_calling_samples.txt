@@ -1,0 +1,192 @@
+tool: {
+  "name": "least_common_multiple",
+  "description": "Computes the least common multiple (LCM) of two positive integers.",
+  "arguments": {
+    "a": {
+      "description": "The first positive integer.",
+      "required": true,
+      "type": "int"
+    },
+    "b": {
+      "description": "The second positive integer.",
+      "required": true,
+      "type": "int"
+    }
+  }
+}
+response: {
+  "query": "I have a wheel that makes a full turn every 12 seconds and another wheel that makes a full turn every 18 seconds. After how many seconds will both wheels be at their starting position at the same time?",
+  "answers": [
+    {
+      "name": "least_common_multiple",
+      "arguments": {
+        "a": 12,
+        "b": 18
+      }
+    }
+  ]
+}
+
+tool: {
+  "name": "get_station_information",
+  "description": "Get information about a NOAA tide station using its ID.",
+  "arguments": {
+    "is_id": {
+      "description": "The station ID to retrieve information for.",
+      "required": true,
+      "type": "str",
+      "default": "8570283"
+    }
+  }
+}
+response: {
+  "query": "Can you provide information about the NOAA tide station in Chicago with ID '2222220'?",
+  "answers": [
+    {
+      "name": "get_station_information",
+      "arguments": {
+        "is_id": "2222220"
+      }
+    }
+  ]
+}
+
+tool: {
+  "name": "average",
+  "description": "Calculates the arithmetic mean of a list of numbers.",
+  "arguments": {
+    "numbers": {
+      "description": "The list of numbers.",
+      "required": true,
+      "type": "List[float]"
+    }
+  }
+}
+response: {
+  "query": "What is the average of the numbers 1, 2, 3, 4, and 5?",
+  "answers": [
+    {
+      "name": "average",
+      "arguments": {
+        "numbers": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    }
+  ]
+}
+
+tools:
+[
+  {
+    "name": "getpostcode",
+    "description": "Retrieve details for a given UK postcode using the RapidAPI service.",
+    "arguments": {
+      "postcode": {
+        "description": "The UK postcode to be queried.",
+        "required": true,
+        "type": "str",
+        "default": "SW1A2AA"
+      }
+    }
+  },
+  {
+    "name": "listallcountries",
+    "description": "Retrieves a list of all countries from the API with optional pagination and sorting.",
+    "arguments": {
+      "page": {
+        "description": "Page number to retrieve. Defaults to 1.",
+        "required": true,
+        "type": "int",
+        "default": 1
+      },
+      "sortby": {
+        "description": "Sorting criteria in the format `field:order`, e.g., `name:asc` or `name:desc`. Defaults to 'name:asc'.",
+        "required": true,
+        "type": "str",
+        "default": "name:asc"
+      },
+      "limit": {
+        "description": "Maximum number of results per page. Defaults to 200.",
+        "required": true,
+        "type": "int",
+        "default": 200
+      }
+    }
+  }
+]
+response:
+{
+  "query": "Can you provide details for the postcodes SW1A 0AA and M1 1AE?",
+  "answers": [
+    {
+      "name": "getpostcode",
+      "arguments": {
+        "postcode": "SW1A 0AA"
+      }
+    },
+    {
+      "name": "getpostcode",
+      "arguments": {
+        "postcode": "M1 1AE"
+      }
+    }
+  ]
+}
+
+tools:
+[
+  {
+    "name": "search_news",
+    "description": "Search for news articles using a specified keyword and language.",
+    "arguments": {
+      "keyword": {
+        "description": "The keyword to search for in news articles.",
+        "required": true,
+        "type": "str",
+        "default": "Joe Biden"
+      },
+      "language": {
+        "description": "The language of the news articles. Supported languages include:",
+        "required": true,
+        "type": "str",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "actors_get_interesting_jobs",
+    "description": "Retrieves interesting jobs for a specified actor or actress using the RapidAPI service.",
+    "arguments": {
+      "nconst": {
+        "description": "The unique identifier for the actor/actress, which should start with \"nm\" (e.g., \"nm0001667\"). This can typically be found using the /actors/list-born-today or /actors/list-most-popular-celebs endpoints.",
+        "required": true,
+        "type": "str",
+        "default": "nm0001667"
+      }
+    }
+  }
+]
+response:
+{
+  "query": "I need to find news about the Swedish economy in Swedish and also want to know what roles the actor with nconst 'nm0000555' has been in recently.",
+  "answers": [
+    {
+      "name": "search_news",
+      "arguments": {
+        "keyword": "Swedish economy",
+        "language": "se"
+      }
+    },
+    {
+      "name": "actors_get_interesting_jobs",
+      "arguments": {
+        "nconst": "nm0000555"
+      }
+    }
+  ]
+}
