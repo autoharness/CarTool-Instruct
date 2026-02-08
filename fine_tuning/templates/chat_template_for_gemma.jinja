@@ -1,0 +1,73 @@
+{{ bos_token }}
+{%- for message in messages -%}
+    {#- Handle System/Developer Message & Tool Injection -#}
+    {%- if message['role'] == 'system' or message['role'] == 'developer' -%}
+        {{- '<start_of_turn>developer\n' -}}
+
+        {#- PATCH: Remove the specific instruction sentence from the content, make the prompts more consistent for training purposes. -#}
+        {%- set amend_text = "You are a model that can do function calling with the following functions." -%}
+        {%- set clean_content = message['content'] | replace(amend_text, "") | trim -%}
+
+        {{- clean_content -}}
+
+        {#- If tools exist, format them into a JSON list and append to system prompt -#}
+        {%- set function_call_output_format = '```json\n[{"function":"func_name1","parameters":{"param1":"value1","param2":"value2"...}},{"function":"func_name2","parameters":{"param":"value"}}]\n```' -%}
+        {%- if loop.first and tools -%}
+            {{- '\n\nYou should only return the function calls in your response.\nIf you decide to invoke any of the function(s), you MUST put it in the format of ' -}}
+            {{- function_call_output_format -}}
+            {{- '\nYou SHOULD NOT include any other text in the response.' -}}
+            {{- '\n\n' -}}
+            {{- amend_text -}}
+            {{- '\n[\n' -}}
+            {%- for tool in tools -%}
+                {%- set t = tool['function'] -%}
+                {{- '  {\n' -}}
+                {{- '    "name": ' -}}{{ t['name'] | tojson }}{{- ',\n' -}}
+                {{- '    "description": ' -}}{{ t['description'] | tojson }}{{- ',\n' -}}
+                {{- '    "parameters": ' -}}{{ t['parameters'] | tojson }}
+                {{- '\n  }' -}}
+                {%- if not loop.last -%},{%- endif -%}
+                {{- '\n' -}}
+            {%- endfor -%}
+            {{- ']' -}}
+        {%- endif -%}
+        {{- '<end_of_turn>\n' -}}
+
+    {#- Handle User Message -#}
+    {%- elif message['role'] == 'user' -%}
+        {{- '<start_of_turn>user\n' + message['content'] + '<end_of_turn>\n' -}}
+
+    {#- Handle Assistant Message (Text + Tool Calls) -#}
+    {%- elif message['role'] == 'assistant' -%}
+        {{- '<start_of_turn>model\n' -}}
+
+        {#- Render text content if it exists -#}
+        {%- if message['content'] -%}
+            {{- message['content'] -}}
+        {%- endif -%}
+
+        {#- Render Tool Calls in the requested Markdown JSON format -#}
+        {%- if message['tool_calls'] -%}
+            {#- Add a newline if there was previous content -#}
+            {%- if message['content'] -%}{{ '\n' }}{%- endif -%}
+            {{- '```json\n' -}}
+            {{- '[' -}}
+            {%- for tool_call in message['tool_calls'] -%}
+                {%- set f = tool_call['function'] -%}
+                {#- Transform 'name' -> 'function' and 'arguments' -> 'parameters' -#}
+                {{- '{"function": ' -}}{{ f['name'] | tojson }}{{- ', "parameters": ' -}}{{ f['arguments'] | tojson }}{{- '}' -}}
+                {%- if not loop.last -%},{%- endif -%}
+            {%- endfor -%}
+            {{- ']\n```' -}}
+        {%- endif -%}
+        {{- '<end_of_turn>\n' -}}
+
+    {#- Handle Tool Response (Execution Results) -#}
+    {%- elif message['role'] == 'tool' -%}
+        {{- '<start_of_turn>tool\n' + message['content'] + '<end_of_turn>\n' -}}
+    {%- endif -%}
+{%- endfor -%}
+{#- Handle Generation Prompt (for inference) -#}
+{%- if add_generation_prompt -%}
+    {{- '<start_of_turn>model\n' -}}
+{%- endif -%}

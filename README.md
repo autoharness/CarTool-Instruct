@@ -1,8 +1,8 @@
 # 📰 CarTool-Instruct
 
-This repository contains the generation pipeline for the [CarTool-Instruct](https://huggingface.co/datasets/autoharness/CarTool-Instruct) dataset, along with examples of fine-tuning models using this dataset.
+The [**CarTool-Instruct Dataset**](https://huggingface.co/datasets/autoharness/CarTool-Instruct) is specifically tailored for [CarToolForge](https://github.com/autoharness/CarToolForge). It aims to evaluate and improve model accuracy in **function-calling** scenarios defined within CarToolForge, with a particular focus on fine-tuning small-parameter models optimized for **on-device deployment**.
 
-The **CarTool-Instruct Dataset** is specifically tailored for [CarToolForge](https://github.com/autoharness/CarToolForge). It aims to evaluate and improve model accuracy in **function-calling** scenarios defined within CarToolForge, with a particular focus on fine-tuning small-parameter models optimized for **on-device deployment**.
+This repository contains the generation pipeline for the CarTool-Instruct dataset, along with examples of fine-tuning models using this dataset.
 
 ## How to Generate Datasets
 
@@ -66,6 +66,14 @@ To see all available options of `refine`, run:
 ```
 python gen_pipeline/src/cli.py refine --help
 ```
+
+## Fine-tuning
+
+The [Fine_Tuning_Car_Tool_Instruct_with_Hugging_Face.ipynb](fine_tuning/Fine_Tuning_Car_Tool_Instruct_with_Hugging_Face.ipynb) showcases how to fine-tune models on the CarTool-Instruct dataset using the [TRL](https://huggingface.co/docs/trl/en/index) library. Results from some of the fine-tuning experiments can be found in [fine_tuning/README.md](fine_tuning/README.md).
+
+## Limitations
+
+The dataset and generation pipeline do not currently cover **multi-turn** function calling capability.
 
 ## References
 

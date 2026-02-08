@@ -77,4 +77,3 @@ cython_debug/
 .idea/
 .vscode/
 access_token.toml
-/fine_tuning

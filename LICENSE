@@ -27,3 +27,11 @@ SOFTWARE.
 
  A copy of the license can be found in the file licenses/LICENSE-DroidCall.
 ==========================================================================
+
+==========================================================================
+ This project includes software from the "gemma-cookbook" project,
+ which is licensed under the Apache-2.0 license.
+ Copyright 2025 Google LLC
+
+ A copy of the license can be found in the file licenses/LICENSE-gemma-cookbook.
+==========================================================================
