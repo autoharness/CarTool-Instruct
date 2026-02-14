@@ -76,4 +76,5 @@ dmypy.json
 cython_debug/
 .idea/
 .vscode/
+*.jinja.bk
 access_token.toml

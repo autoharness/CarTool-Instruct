@@ -11,7 +11,7 @@
         {{- clean_content -}}
 
         {#- If tools exist, format them into a JSON list and append to system prompt -#}
-        {%- set function_call_output_format = '```json\n[{"function":"func_name1","parameters":{"param1":"value1","param2":"value2"...}},{"function":"func_name2","parameters":{"param":"value"}}]\n```' -%}
+        {%- set function_call_output_format = '<tool_call>\n[{"name":"func_name1","arguments":{"param1":"value1","param2":"value2"...}},{"name":"func_name2","arguments":{"param":"value"}}]\n</tool_call>' -%}
         {%- if loop.first and tools -%}
             {{- '\n\nYou should only return the function calls in your response.\nIf you decide to invoke any of the function(s), you MUST put it in the format of ' -}}
             {{- function_call_output_format -}}
@@ -46,19 +46,18 @@
             {{- message['content'] -}}
         {%- endif -%}
 
-        {#- Render Tool Calls in the requested Markdown JSON format -#}
+        {#- Render Tool Calls in the requested JSON format -#}
         {%- if message['tool_calls'] -%}
             {#- Add a newline if there was previous content -#}
             {%- if message['content'] -%}{{ '\n' }}{%- endif -%}
-            {{- '```json\n' -}}
+            {{- '<tool_call>\n' -}}
             {{- '[' -}}
             {%- for tool_call in message['tool_calls'] -%}
                 {%- set f = tool_call['function'] -%}
-                {#- Transform 'name' -> 'function' and 'arguments' -> 'parameters' -#}
-                {{- '{"function": ' -}}{{ f['name'] | tojson }}{{- ', "parameters": ' -}}{{ f['arguments'] | tojson }}{{- '}' -}}
+                {{- '{"name": ' -}}{{ f['name'] | tojson }}{{- ', "arguments": ' -}}{{ f['arguments'] | tojson }}{{- '}' -}}
                 {%- if not loop.last -%},{%- endif -%}
             {%- endfor -%}
-            {{- ']\n```' -}}
+            {{- ']\n</tool_call>' -}}
         {%- endif -%}
         {{- '<|im_end|>\n' -}}
 
