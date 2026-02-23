@@ -63,7 +63,16 @@
 
     {#- Handle Tool Response (Execution Results) -#}
     {%- elif message['role'] == 'tool' -%}
-        {{- '<|im_start|>tool\n' + message['content'] + '<|im_end|>\n' -}}
+        {{- '<|im_start|>user\n' -}}
+        {%- for tool_resp in message['content'] -%}
+            {{- '<tool_response>\n' -}}
+            {{- tool_resp | tojson -}}
+            {{- '\n</tool_response>' -}}
+            {%- if not loop.last -%}
+                {{- '\n' -}}
+            {%- endif -%}
+        {%- endfor -%}
+        {{- '<|im_end|>\n' -}}
     {%- endif -%}
 {%- endfor -%}
 {#- Handle Generation Prompt (for inference) -#}
