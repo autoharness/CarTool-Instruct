@@ -63,7 +63,9 @@
 
     {#- Handle Tool Response (Execution Results) -#}
     {%- elif message['role'] == 'tool' -%}
-        {{- '<start_of_turn>tool\n' + message['content'] + '<end_of_turn>\n' -}}
+        {{- '<start_of_turn>user\n' -}}
+        {{- 'Tool Output:' + (message['content'] | tojson) + '\n' -}}
+        {{- '<end_of_turn>\n' -}}
     {%- endif -%}
 {%- endfor -%}
 {#- Handle Generation Prompt (for inference) -#}
