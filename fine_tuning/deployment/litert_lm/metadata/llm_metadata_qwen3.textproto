@@ -1,0 +1,6 @@
+stop_tokens: {
+    token_str: "<|im_end|>"
+}
+llm_model_type: {
+    qwen3: {}
+}

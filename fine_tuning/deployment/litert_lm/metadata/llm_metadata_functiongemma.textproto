@@ -1,0 +1,17 @@
+start_token: {
+    token_ids: {
+        ids: [ 2 ]
+    }
+}
+stop_tokens: {
+    token_str: "<end_of_turn>"
+}
+stop_tokens: {
+    token_str: "<start_function_response>"
+}
+stop_tokens: {
+    token_str: "<eos>"
+}
+llm_model_type: {
+    function_gemma: {}
+}
