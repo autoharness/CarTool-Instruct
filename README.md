@@ -71,6 +71,8 @@ python gen_pipeline/src/cli.py refine --help
 
 The [Fine_Tuning_Car_Tool_Instruct_with_Hugging_Face.ipynb](fine_tuning/Fine_Tuning_Car_Tool_Instruct_with_Hugging_Face.ipynb) showcases how to fine-tune models on the CarTool-Instruct dataset using the [TRL](https://huggingface.co/docs/trl/en/index) library. Results from some of the fine-tuning experiments can be found in [fine_tuning/README.md](fine_tuning/README.md).
 
+Check the [deployment](https://github.com/autoharness/CarTool-Instruct/tree/main/fine_tuning/deployment) folder to learn about further converting fine-tuned models for specific on-device inference engines (e.g., LiteRT-LM).
+
 ## Limitations
 
 The dataset and generation pipeline do not currently cover **multi-turn** function calling capability.
