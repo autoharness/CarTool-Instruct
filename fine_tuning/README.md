@@ -6,6 +6,8 @@ The table below summarizes fine-tuning performance across different models and p
 | google/functiongemma-270m-it | FFT | 6500 | 2 | 1e-5 | adamw_torch_fused | NA | NA | NA | **0** | **31.58** | 64.58 | 64.58 |
 | google/functiongemma-270m-it | FFT | 2000 | 2 | 1e-5 | adamw_torch_fused | NA | NA | NA | **0** | **7.05** | 64.58 | 64.91 |
 | Qwen/Qwen3-4B-Instruct-2507 | LoRA | 8000 | 2 | 2e-4 | adamw_torch_fused | 8 | 16 | 0.05 | **22.53** | **63.16** | 75.90 | 75.46 |
+| google/gemma-4-E2B-it |  |  |  |  |  |  |  |  | **37.47** |  | 55.55 |  |
+| google/gemma-4-E4B-it |  |  |  |  |  |  |  |  | **43.47** |  | 57.83 |  |
 
 > [!NOTE]
 >
